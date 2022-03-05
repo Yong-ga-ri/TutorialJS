@@ -14,14 +14,14 @@ function onLoginSumbit(event) {
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY, username);
     // greeting.innerText = "Hello " + username;
-    paintGreetings(username);
+    paintGreetings();
 }
 
-function paintGreetings(username) {
+function paintGreetings() {
+    const username = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
-
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
@@ -31,5 +31,5 @@ if (savedUsername === null) {
     loginForm.addEventListener("submit", onLoginSumbit);
 } else {
     // show the greetings
-    paintGreetings(savedUsername);
+    paintGreetings();
 }
