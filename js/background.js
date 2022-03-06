@@ -10,7 +10,7 @@ const bgImg = document.createElement("img");
 
 bgImg.src = `img/${chosenImg}`;
 
-document.body.prepend(bgImg);
+document.body.append(bgImg);
 // document.body.appendChild(bgImg);
 
 console.log(bgImg);
